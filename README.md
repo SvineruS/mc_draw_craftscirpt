@@ -1,4 +1,4 @@
-# mc_draw_craftscirpt
+# mc_draw_craftscript
 
 craftscript (worldedit script) for drawings
 
