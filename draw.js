@@ -244,6 +244,13 @@ function main() {
 
     var origin = player.getBlockIn().toVector().toBlockPoint();
 
+    var dir = player.getCardinalDirection();
+    if (!dir.isCardinal()) {
+        context.error("You need to be facing at a right angle to the world.");
+        return;
+    }
+    dir = dir.toVector();
+
     for (var x = 0; x < width; x++) {
         for (var y = 0; y < height; y++) {
 
@@ -252,12 +259,15 @@ function main() {
                 continue;
 
             var data = findClosestColor(color);
+            var block = clothBlocks[data];
 
-            if (!upright) {
-                sess.setBlock(origin.add(x, 0, y), clothBlocks[data]);
-            } else {
-                sess.setBlock(origin.add(x, height - y, 0), clothBlocks[data]);
-            }
+            var coords = upright ?
+                origin.add(0, height - y, 0).add(dir.multiply(x).toBlockPoint())
+                :
+                origin.add(x, 0, y);
+
+            sess.setBlock(coords, block);
+
         }
     }
 }
