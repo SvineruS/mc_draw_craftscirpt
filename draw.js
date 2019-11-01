@@ -171,7 +171,7 @@ colors = {
     'light_gray_concrete': [125, 125, 115],
     'black_wool': [20, 21, 25],
     'spruce_planks': [114, 84, 48],
-    'magma_block': [142, 63, 31],
+    'magma_block': [202, 78, 6],
     'dirt': [134, 96, 67],
     'light_blue_wool': [58, 175, 217],
     'bricks': [150, 97, 83],
