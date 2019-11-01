@@ -161,7 +161,6 @@ colors = {
     'white_wool': [233, 236, 236],
     'polished_diorite': [192, 193, 194],
     'yellow_terracotta': [186, 133, 35],
-    'smooth_stone_slab': [167, 167, 167],
     'light_blue_concrete': [35, 137, 198],
     'brown_concrete': [96, 59, 31],
     'green_terracotta': [76, 83, 42],
