@@ -229,10 +229,14 @@ function main() {
     var sess = context.remember();
 
     context.checkArgs(1, 2, "<image> [v]");
-    var f = context.getSafeOpenFile("drawings", argv[1], "png", ["png", "jpg", "jpeg", "bmp"]);
-    if (!f.exists()) {
-        player.printError("Specified file doesn't exist.");
-        return
+    if (argv[1].startsWith("http")) {
+        var f = new URL(argv[1]);
+    } else {
+        var f = context.getSafeOpenFile("drawings", argv[1], "png", ["png", "jpg", "jpeg", "bmp"]);
+        if (!f.exists()) {
+            player.printError("Specified file doesn't exist.");
+            return
+        }
     }
 
     var upright = argv[2] == "v";
